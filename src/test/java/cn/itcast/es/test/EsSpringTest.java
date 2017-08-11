@@ -37,7 +37,7 @@ public class EsSpringTest {
     @Test
     public void testSave() throws Exception {
         Article article = new Article();
-        article.setId(1001);
+        article.setId(1001l);
         article.setTitle("Spring Data Elasticsearch 1.3.1 昨天发布");
         article.setContent("DATAES-171 - 添加失效查询关键字支持 DATAES-194 - 测试可以清理  data 目录 DATAES-179 - 支持  Attachment 字段类型 DATAES-94 - 更新到最新版本的 elasticsearch 1.7.3 驱动器");
 
@@ -48,20 +48,20 @@ public class EsSpringTest {
     @Test
     public void testDelete() {
         Article article = new Article();
-        article.setId(1001);
+        article.setId(1001l);
         articleService.delete(article);
     }
     
     //根据id查找
     @Test
     public void testFindOne() {
-        System.out.println(articleService.findOne(1001));
+        System.out.println(articleService.findOne(1001l));
     }
 
     /**批量保存*/
     @Test
     public void testSaveBatch() throws Exception {
-        for (int i = 1; i <= 100; i++) {
+        for (Long i = 1l; i <= 100; i++) {
             Article article = new Article();
             article.setId(i);
             article.setTitle(i + "Spring Data Elasticsearch 1.3.1 昨天发布");

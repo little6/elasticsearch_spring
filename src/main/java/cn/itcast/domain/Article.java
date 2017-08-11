@@ -8,23 +8,33 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Document(indexName = "blog3", type = "article")
 public class Article {
-	@Id
-	@Field(index = FieldIndex.not_analyzed, store = true, type = FieldType.Integer)
-	private Integer id;
+//	@Id
+	@Field(index = FieldIndex.not_analyzed, store = true, type = FieldType.Long)
+	private Long id;
 	@Field(index = FieldIndex.analyzed, analyzer = "ik", store = true, searchAnalyzer = "ik", type = FieldType.String)
 	private String title;
 	@Field(index = FieldIndex.analyzed, analyzer = "ik", store = true, searchAnalyzer = "ik", type = FieldType.String)
 	private String content;
+	@Field(store = true, type = FieldType.Long)
+	private Long size;
 
-	public Integer getId() {
-		return id;
-	}
+	public Long getSize() {
+        return size;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setSize(Long size) {
+        this.size = size;
+    }
 
-	public String getTitle() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
 		return title;
 	}
 

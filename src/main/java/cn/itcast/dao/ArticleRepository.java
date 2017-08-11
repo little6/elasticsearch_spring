@@ -24,7 +24,7 @@ import cn.itcast.domain.Article;
  * @author huyy
  * @version：1.0
  */
-public interface ArticleRepository extends ElasticsearchRepository<Article, Integer> {
+public interface ArticleRepository extends ElasticsearchRepository<Article, Long> {
 
     List<Article> findByTitle(String title);
 

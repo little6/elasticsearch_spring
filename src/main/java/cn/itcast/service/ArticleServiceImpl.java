@@ -51,7 +51,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public Article findOne(Integer id) {
+    public Article findOne(Long id) {
         return articleRepository.findOne(id);
     }
 

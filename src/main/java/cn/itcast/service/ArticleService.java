@@ -46,7 +46,7 @@ public interface ArticleService {
      * ============History===========<br/>
      * 2017年7月11日   Administrator    新建
      */
-    public Article findOne(Integer id);
+    public Article findOne(Long id);
 
     /**
      * 
